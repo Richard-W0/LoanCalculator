@@ -2,6 +2,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 import pyperclip
 
+#the math here seems to be working but Im also very dumb
 def calculate_months_to_pay_off_loan():
     starting_sum = float(alkusumma_entry.get())
     yearly_interest = float(vuosikorko_entry.get())
@@ -28,6 +29,8 @@ def calculate_months_to_pay_off_loan():
             else:
                 last_payment = monthly_payment
         months += 1
+
+#yeah I want to change to another GUI library, probably pyqt but not sure yet
 
     original_result_text = f"lainassa kestää {months} kuukautta maksaa, ja viimeinen maksuerä on {last_payment:.2f}€."
     result_label.config(text=original_result_text, font=("Roboto", 14))
@@ -62,6 +65,8 @@ entry_font = ("Roboto", 14)
 style = ttk.Style()
 style.configure("TLabel", padding=0)
 style.configure("TButton", padding=0)
+
+#all of this is very janky and 100% subject to change 
 
 alkusumma_label = tk.Label(input_frame, text="Lainan määrä:", font=label_font, bg="#333333", fg="#FFFFFF")
 alkusumma_label.pack()
